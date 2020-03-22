@@ -5,6 +5,9 @@
 #-------------------------------------------------------
 
 name: My-GitHubActions-Basics
+env :
+  APPLICATION_NAME    : "MyFlask"
+  DEPLOY_PACKAGE_NAME : "flask-deploy-ver-${{ gihub.sha }}"
 
 on:
   push:
@@ -17,6 +20,12 @@ jobs:
     steps:
     - name: Print Hello Message in testing
       run : echo "Hello world from testing job"
+    
+    - name: Execute few commands
+      run : |
+        echo "Hello Message 1"
+        echo "Hello Message 2"
+        echo "Application name: ${{ env.APPLICATION_NAME }}"
       
   my_deploy:
     runs-on: ubuntu-latest
@@ -25,3 +34,6 @@ jobs:
     steps:
     - name: Print Hello Message in deploy
       run : echo "Hello world from deploy job"
+    
+    - name: Printing Deployment package
+      run : echo "Deployment package name is ${{ env.DEPLOY_PACKAGE_NAME }}" 
