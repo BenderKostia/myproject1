@@ -1,0 +1,26 @@
+#-------------------------------------------------------
+# My 1st Actions
+#
+# Bender \ 2020-03-22
+#-------------------------------------------------------
+
+name: My-GitHubActions-Basics
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  my_testing:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Print Hello Messege
+      run : echo "Hello world from testing job"
+      
+  my_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Print Hello Messege
+      run : echo "Hello world from deploy job"
