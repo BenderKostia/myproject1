@@ -49,8 +49,8 @@ jobs:
       
     - name: Print env vars
       run : |
-        echo "Var1 = ${{ enc.VAR1 }}"
-        echo "Var2 = ${{ enc.VAR2 }}"
+        echo "Var1 = ${{ env.VAR1 }}"
+        echo "Var2 = ${{ env.VAR2 }}"
         echo "Var1 = $LOCAL_VAR"
       env:
         LOCAL_VAR: "This is super local Enviroment variable"      
